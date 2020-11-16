@@ -2,10 +2,12 @@ import React from 'react'
 import '../css/contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import ChartPage from "./chatpage"
 
 function Contact() {
     return (
         <section id="contact" className="container">
+        <ChartPage/>
             <h1>----- Contact us -----</h1>
             <div id="main">
                 <section id="map" className="pt-3">

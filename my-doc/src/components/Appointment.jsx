@@ -4,6 +4,7 @@ import '../css/appointment.css'
 import BG from '../img/bg.jpg'
 import axios from 'axios'
 import {useToasts} from 'react-toast-notifications'
+import ChartPage from "./chatpage"
 function Appointment() {
     const [formDetails, setFormDetails] = useState('');
     const {name, email, phone,age,gender,date} = formDetails;
@@ -18,6 +19,7 @@ function Appointment() {
     }
     return (
         <section id="appointment">
+            <ChartPage/>
             <img src={BG} alt="doc" id="bg-img" />
             <form action="#" method="post" className="my-auto" onChange={handleChange} onSubmit={handleSubmit}>
                 <div id="info">
