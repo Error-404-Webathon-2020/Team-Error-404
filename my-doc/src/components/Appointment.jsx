@@ -4,17 +4,33 @@ import '../css/appointment.css'
 import BG from '../img/bg.jpg'
 import axios from 'axios'
 import {useToasts} from 'react-toast-notifications'
+import {Spinner, Button} from 'react-bootstrap'
+
+
 function Appointment() {
     const [formDetails, setFormDetails] = useState('');
     const {name, email, phone,age,gender,date} = formDetails;
     const handleChange = e => {
         setFormDetails({...formDetails, [e.target.name]: e.target.value});
     }
+    const [loading,setLoading] = useState(false);
+
     const {addToast}  = useToasts();
     const handleSubmit = e => {
         e.preventDefault();
+        setLoading(true);
         console.log(formDetails);
-        axios.post('http://localhost:5000/api/appointment', formDetails).then(res => addToast(res.data, {appearance:'success', autoDismiss:'true'}));   
+        axios.post('http://localhost:5000/api/appointment', formDetails).then(res => {
+            setLoading(false);
+            console.log(res);
+            if(res.data)
+                addToast('Booked successfully', {appearance:'success'})
+        }).catch(err => {
+            setLoading(false);
+            console.log(err);
+            if(err.message)
+            addToast('An error occured, try again!', {appearance:'error'})
+        });
     }
     return (
         <section id="appointment">
@@ -60,12 +76,15 @@ function Appointment() {
                 <div className="input">
                     <label className="label-for-input">
                         <span>Date:</span>
-                        <input type="date" name="date" required />
+                        <input type="datetime-local" name="date" required />
                     </label>
                 </div>
-                <div id="submit">
-                    <input type="submit" value="Book Appointment" />
-                </div>
+                {/* <div id="submit"> */}
+                    { loading? 
+                    <Button variant="primary" className="btn-block" disabled> <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/> Booking</Button>:
+                    <button type='submit' id="submit" className='btn btn-block btn-primary'>Book Appointment</button>                
+                 }
+                {/* </div> */}
             </form>
         </section>
     )
