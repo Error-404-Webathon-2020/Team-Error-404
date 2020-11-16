@@ -267,19 +267,32 @@ async function trial(){
              var pin3 = document.getElementById('confirmed');
              var pin4 = document.getElementById('deceased');
              var pin5 = document.getElementById('date');
-           var d1 = `  Active:<br><div>${data[STATE].total.confirmed-data[STATE].total.recovered-data[STATE].total.deceased}</div>[${data2.todayCases-data2.todayRecovered-data2.todayDeaths}]`
-           var d2 = `  Recovered:<br><div>${data[STATE].total.recovered}</div><br>[+${data2.todayRecovered}]`
-           var d3 = `  Confirmed:<br><div>${data[STATE].total.confirmed}</div><br>[+${data2.todayCases}]`
-           var d4 = `  Deceased:<br><div>${data[STATE].total.deceased}</div><br>[+${data2.todayDeaths}]`
+           var d1 = `  Active:<br><div>${data[STATE].total.confirmed-data[STATE].total.recovered-data[STATE].total.deceased}</div>`
+           var d2 = `  Recovered:<br><div>${data[STATE].total.recovered}</div>`
+           var d3 = `  Confirmed:<br><div>${data[STATE].total.confirmed}</div>`
+           var d4 = `  Deceased:<br><div>${data[STATE].total.deceased}</div>`
+           var f1,f2,f3,f4;
+           if(STATE=='TT'){
+           f1=`[${data2.todayCases-data2.todayRecovered-data2.todayDeaths}}`;
+           f2=`<br>[+${data2.todayRecovered}]`;
+           f3=`<br>[+${data2.todayCases}]`;
+           f4=`<br>[+${data2.todayDeaths}]`;
+           }
+           else{
+             f1=`[N/A]`;
+             f2=`[N/A]`;
+             f3=`[N/A]`;
+             f4=`[N/A]`;
+           }
            console.log(data2);
            var pin6 = document.getElementById("label");
            pin6.innerHTML = `COVID19 Dashboard of ${state}` 
            updatedFormatted = new Date(data2.updated).toLocaleString();
            var d5 = `<p id="date">Last Updated On:${updatedFormatted}`
-           pin1.innerHTML = d1
-           pin2.innerHTML = d2
-           pin3.innerHTML = d3
-           pin4.innerHTML = d4
+           pin1.innerHTML = d1+f1
+           pin2.innerHTML = d2+f2
+           pin3.innerHTML = d3+f3
+           pin4.innerHTML = d4+f4
            pin5.innerHTML = d5
 
     }buildTable();
