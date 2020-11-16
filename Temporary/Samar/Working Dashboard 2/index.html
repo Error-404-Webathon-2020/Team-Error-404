@@ -45,10 +45,10 @@
     <div id = "buttons" style="width:100%">
       <button onclick="getLocation()">Click On ME To Get Your State's Stats</button>
       </div>
-      
+      <p id="demo"></p>
 
 
-<p id="demo"></p>
+
     <script>
       var refresh=true;
      var x = document.getElementById("demo");
@@ -254,22 +254,28 @@ async function trial(){
          
          
          async function buildTable(){
-        const response = await fetch('https://corona.lmao.ninja/v2/countries');
-             var data = await response.json();
-             data.forEach(elt =>{
-                if(elt.country=='India'){data=elt;return;}      
+        const response = await fetch('https://api.covid19india.org/v4/data.json');
+        const response2 = await fetch("https://corona.lmao.ninja/v2/countries");
+        var data2 = await response2.json();
+        data2.forEach(elt =>{
+                if(elt.country=='India'){data2=elt;return;}      
     })
+             var data = await response.json();
+             console.log(data[STATE].total);
              var pin1 = document.getElementById('active');
              var pin2 = document.getElementById('recovered');
              var pin3 = document.getElementById('confirmed');
              var pin4 = document.getElementById('deceased');
              var pin5 = document.getElementById('date');
-           var d1 = `  Active:<br><div>${data.active}</div>[${data.todayCases-data.todayRecovered-data.todayDeaths}]`
-           var d2 = `  Recovered:<br><div>${data.recovered}</div><br>[+${data.todayRecovered}]`
-           var d3 = `  Confirmed:<br><div>${data.cases}</div><br>[+${data.todayCases}]`
-           var d4 = `  Deceased:<br><div>${data.deaths}</div><br>[+${data.todayDeaths}]`
-           updatedFormatted = new Date(data.updated).toLocaleString();
-           var d5 = `${updatedFormatted}`
+           var d1 = `  Active:<br><div>${data[STATE].total.confirmed-data[STATE].total.recovered-data[STATE].total.deceased}</div>[${data2.todayCases-data2.todayRecovered-data2.todayDeaths}]`
+           var d2 = `  Recovered:<br><div>${data[STATE].total.recovered}</div><br>[+${data2.todayRecovered}]`
+           var d3 = `  Confirmed:<br><div>${data[STATE].total.confirmed}</div><br>[+${data2.todayCases}]`
+           var d4 = `  Deceased:<br><div>${data[STATE].total.deceased}</div><br>[+${data2.todayDeaths}]`
+           console.log(data2);
+           var pin6 = document.getElementById("label");
+           pin6.innerHTML = `COVID19 Dashboard of ${state}` 
+           updatedFormatted = new Date(data2.updated).toLocaleString();
+           var d5 = `<p id="date">Last Updated On:${updatedFormatted}`
            pin1.innerHTML = d1
            pin2.innerHTML = d2
            pin3.innerHTML = d3
