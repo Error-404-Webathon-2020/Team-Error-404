@@ -2,12 +2,12 @@ import React from 'react'
 import '../css/contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import ChartPage from "./chatpage"
+import ChatBot from "./ChatBot"
 
 function Contact() {
     return (
         <section id="contact" className="container">
-        <ChartPage/>
+        <ChatBot/>
             <h1>----- Contact us -----</h1>
             <div id="main">
                 <section id="map" className="pt-3">
@@ -19,7 +19,7 @@ function Contact() {
                     <h2>Reach us at</h2>
                     <p>phone: +91 0987654321</p>
                     <p>phone: +91 0987654321</p>
-                    <p><a href="mailto:hello@mydoc.com" id="mail">hello@mydoc.com</a></p>
+                    <p><a href="mailto:care.mydoc@gmail.com" id="mail">care.mydoc@gmail.com</a></p>
                     <h2>Connect with us</h2>
                     <div className="social">
                         <a href="#"><FontAwesomeIcon icon={faLinkedin} className="social-icons" /></a>

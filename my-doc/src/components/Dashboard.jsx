@@ -56,7 +56,6 @@ function Dashboard() {
       let location_api = "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude + "&localityLanguage=en";
       fetch(location_api).then(res => res.json()).then(data => {
         state = data.principalSubdivision;
-        console.log(s[state]);
         STATE = s[state];
         var pin = document.getElementById('label2');
         pin.innerHTML += state;
@@ -153,7 +152,6 @@ function Dashboard() {
       const ctx = document.getElementById('chart').getContext('2d');
       var t = document.getElementById("subtitle-chart");
       t.innerHTML = `Date Wise New Cases : ${state}`;
-      console.log(state);
       const myChart = new Chart(ctx, {
         type: 'line', fill: false,
         data: {
@@ -215,7 +213,6 @@ function Dashboard() {
         if (elt.country == 'India') { data2 = elt; return; }
       })
       var data = await response.json();
-      console.log(data[STATE].total);
       var pin1 = document.getElementById('active');
       var pin2 = document.getElementById('recovered');
       var pin3 = document.getElementById('confirmed');
@@ -238,7 +235,6 @@ function Dashboard() {
         f3 = `<br><p>N/A</p> `;
         f4 = `<br><p>N/A</p> `;
       }
-      console.log(data2);
       var pin6 = document.getElementById("label");
       pin6.innerHTML = `COVID19 Dashboard of ${state}`;
       toggleLoading();
@@ -258,11 +254,7 @@ function Dashboard() {
         buildTable();
         toggleLoading();
     }, [])
-    // useEffect(() => {
-    //     toggleLoading();
-    // }, [state])
 
-    // console.log(isLoading, 'loading');
     return (
       <div id="body">
       <section id="covid-19-dashboard">

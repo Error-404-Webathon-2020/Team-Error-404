@@ -5,7 +5,7 @@ import BG from '../img/bg.jpg'
 import axios from 'axios'
 import {useToasts} from 'react-toast-notifications'
 import {Spinner, Button} from 'react-bootstrap'
-import ChartPage from "./chatpage"
+import ChatBot from "./ChatBot"
 
 
 function Appointment() {
@@ -20,22 +20,19 @@ function Appointment() {
     const handleSubmit = e => {
         e.preventDefault();
         setLoading(true);
-        console.log(formDetails);
-        axios.post('http://localhost:5000/api/appointment', formDetails).then(res => {
+        axios.post('https://error404-mydoc.herokuapp.com/api/appointment', formDetails).then(res => {
             setLoading(false);
-            console.log(res);
             if(res.data)
                 addToast('Booked Successfully', {appearance:'success'})
         }).catch(err => {
             setLoading(false);
-            console.log(err);
             if(err.message)
             addToast('An error occured, try again!', {appearance:'error'})
         });
     }
-    return (<>
-            <ChartPage/>
-
+    return (
+    <>
+        <ChatBot/>
         <section id="appointment">
             <img src={BG} alt="doc" id="bg-img" />
             <form action="#" method="post" className="my-auto" onChange={handleChange} onSubmit={handleSubmit}>
@@ -82,12 +79,10 @@ function Appointment() {
                         <input type="datetime-local" name="date" required />
                     </label>
                 </div>
-                {/* <div id="submit"> */}
                     { loading? 
                     <Button variant="primary" className="btn-block" disabled> <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/> Booking</Button>:
                     <button type='submit' id="submit" className='btn btn-block btn-primary'>Book Appointment</button>                
                  }
-                {/* </div> */}
             </form>
         </section>
         </>

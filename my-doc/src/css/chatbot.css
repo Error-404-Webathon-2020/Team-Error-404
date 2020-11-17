@@ -1,0 +1,44 @@
+.chatPage {
+  position: fixed;
+  right: 30px;
+  bottom: 80px;
+  width: 27%;
+  z-index: 50;
+}
+
+@media (max-width: 1035px) {
+  .chatPage {
+    width: 40%;
+  }
+}
+@media (max-width: 950px) {
+  .chatPage {
+    width: 40%;
+  }
+}
+
+@media (max-width: 770px) {
+  .chatPage {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .chatPage {
+    width: 86%;
+  }
+
+  .tooggle {
+    right: 25px;
+  }
+}
+
+@media (max-width: 330px) {
+  .chatPage {
+    width: 85%;
+  }
+
+  .tooggle {
+    right: 25px;
+  }
+}

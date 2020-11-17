@@ -6,15 +6,14 @@ import gloves from "../img/gloves.jpg"
 import slide1 from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg'
 import slide3 from '../img/slide3.jpg'
-import ChartPage from "./chatpage"
+import ChatBot from "./ChatBot.js"
 import Dashboard from './Dashboard';
-
 
 import { Carousel } from 'react-bootstrap'
 function Home() {
     return (
         <> 
-        <ChartPage/>
+        <ChatBot/>
             <Carousel>
                 <Carousel.Item>
                     <img src={slide1} className="d-block w-100" id="img1" alt="Notes" />
@@ -30,7 +29,7 @@ Contact our experts for instant and reliable medical advice. And remember preven
                     <Carousel.Caption>
                         <h5 className="animate__animated animate__fadeInDown">Diagnose Your Disease </h5>
                         <p className="animate__animated animate__fadeIn">Hi, chat with our chatbot doctor to assess your risk level against covid-19. Note: The bod generate output based on on your symptoms and the output should not be treated as a Competent Medical opinion.</p>
-                        <p className="animate__animated animate__fadeInUp"><a href='#'>Diagnose Now</a></p>
+                        <p className="animate__animated animate__fadeInUp"><a>Click on the chatbot and get started.</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/products.css'
 // masks
 import mask1 from '../img/products/mask1.jpg'
 import mask2 from '../img/products/mask2.jpg'
@@ -21,12 +20,13 @@ import sanitizer3 from '../img/products/sanitizer3.jpg'
 import sanitizer4 from '../img/products/sanitizer4.jpg'
 import sanitizer5 from '../img/products/sanitizer5.jpg'
 import sanitizer6 from '../img/products/sanitizer6.jpg'
-
 import ProCard from './ProCard'
+import ChatBot from './ChatBot.js'
 
 export const Masks = () => {
     return (
     <>
+    <ChatBot/>
           <h1 className="section-heading" style={{marginTop:'80px'}}>Best Deals </h1>
           <div className='container mb-5'>
             <div className="row mx-auto">
@@ -45,6 +45,7 @@ export const Masks = () => {
 export const Sanitizers = () => {
   return (
   <>
+      <ChatBot/>
         <h1 className="section-heading" style={{marginTop:'80px'}}>Best Deals </h1>
         <div className='container mb-5'>
           <div className="row mx-auto">
@@ -63,6 +64,7 @@ export const Sanitizers = () => {
 export const Gloves = () => {
   return (
   <>
+      <ChatBot/>
         <h1 className="section-heading" style={{marginTop:'80px'}}>Best Deals </h1>
         <div className='container mb-5'>
           <div className="row mx-auto">

@@ -3,18 +3,18 @@ const logger = require('morgan');
 const cors = require('cors');
 const sgMail = require('@sendgrid/mail')
 require('dotenv').config(); 
+// configure mail api
 sgMail.setApiKey("SG."+ process.env.apiKey);
-
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
 app.use(logger('dev'));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
-console.log(process.env.apiKey);
-console.log(process.env.uri); 
+
 // Enables CORS
 app.use(cors({ origin: true }));
+// connect mongodb
 mongoose.connect(process.env.uri,{useNewUrlParser : true, useUnifiedTopology : true});
 const appSchema = new mongoose.Schema({
   name : {type : String},
@@ -33,6 +33,7 @@ app.post('/api/appointment', (req,res) => {
     from: 'care.mydoc@gmail.com',
     to: req.body.email,
     subject: "Appointment scheduled",
+    // mail template
     html: `<section id="mail" style="font-family: Arial, Helvetica, sans-serif; text-align: left; width: 100%;position: relative;">
         <div id="image" style="width: 100%;">
             <img src="https://www.lumahealth.io/wp-content/uploads/2018/05/Transparency-in-the-Doctor-Patient-Relationship-1.jpg" alt="banner image" style="width: 100%;">
@@ -76,15 +77,13 @@ app.post('/api/appointment', (req,res) => {
             return res.send('Booked successfully');
           })
           .catch(err => {
-            console.log(err, 'error');
             return res.send(err);
           })
       } 
       catch(error) {
-        console.log(error, 'error');
+        return res.send(err);
       }
     })();
-  console.log(req);
 });
 
 if (process.env.NODE_ENV === "production") {
@@ -93,4 +92,4 @@ if (process.env.NODE_ENV === "production") {
       res.sendFile(path.resolve(__dirname,'my-doc','build','index.html'))
   })
 }
-app.listen(process.env.PORT || 5000, () => console.log('server running on port 5000'));
+app.listen(process.env.PORT || 5000);

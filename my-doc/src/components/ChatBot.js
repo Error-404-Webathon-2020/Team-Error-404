@@ -2,12 +2,7 @@ import React, { Component ,  useState} from 'react';
 import PropTypes from 'prop-types';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import '../css/chatpage.css'
-
-// <style>
-// @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-// </style>
-
+import '../css/chatbot.css'
 
 const theme = {
   background: '#f5f8fb',
@@ -31,7 +26,6 @@ class Result extends Component{
   }
   componentWillMount() {
     const { steps } = this.props;
-    console.log(this.props);
     const { name ,age ,dry_coughYN ,headacheYN ,shortness_breathYN ,tiredness_YN   } = steps;
    //preprocessing ........
     if( dry_coughYN.value === "Yes" && headacheYN.value==="Yes" && shortness_breathYN.value==="Yes" && tiredness_YN.value==="Yes")
@@ -112,7 +106,6 @@ class Review extends Component {
   
   componentWillMount() {
     const { steps } = this.props;
-    console.log(this.props);
     const { name ,age ,dry_coughYN ,headacheYN ,shortness_breathYN ,tiredness_YN   } = steps;
 
     this.setState({ name, age ,dry_coughYN ,headacheYN ,shortness_breathYN ,tiredness_YN });
@@ -165,9 +158,7 @@ Review.defaultProps = {
 };
 
 const SimpleForm =()=> {
-  
-     const [show ,setShow] = useState(false)
-    
+      const [show ,setShow] = useState(false);
      const botHide=()=>{
        setShow(false)
      }
@@ -376,7 +367,7 @@ const SimpleForm =()=> {
           {
             id:"Click_book_A",
             component:(
-               <a href="https://mydoct.netlify.app/appointment.html" target="_blank" style={{textDecoration:"none"}}>
+               <a href="https://error404-mydoc.herokuapp.com/appointment" target="_blank" style={{textDecoration:"none"}}>
                 <div><strong>Click here to book Appointment</strong></div>      
                </a>
             ),
@@ -384,7 +375,7 @@ const SimpleForm =()=> {
           },{
             id:'Click_go_contact',
             component:(
-              <a href="https://mydoct.netlify.app/contact.html" target="_blank"  style={{textDecoration:"none"}}>
+              <a href="https://error404-mydoc.herokuapp.com/contact-us" target="_blank"  style={{textDecoration:"none"}}>
                 <div><strong>Click to Contact us!</strong></div>
               </a>
             ),
