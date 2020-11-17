@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import './css/home.css'
 import {ToastProvider} from 'react-toast-notifications'
+
 function App() {
   return (
     <>
@@ -41,7 +42,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
-              <Route exact path='/appointment' component={Appointment} />
+            <Route exact path='/appointment' component={Appointment} />
             <Route exact path='/contact-us' component={Contact} />
           </Switch>
         </Router>

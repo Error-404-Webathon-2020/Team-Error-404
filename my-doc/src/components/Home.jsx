@@ -7,6 +7,7 @@ import slide1 from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg'
 import slide3 from '../img/slide3.jpg'
 import ChartPage from "./chatpage"
+import Dashboard from './Dashboard';
 
 
 import { Carousel } from 'react-bootstrap'
@@ -40,6 +41,7 @@ function Home() {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <Dashboard />
             <section id="products">
                 <h1 className="section-heading">Health Care Essentials</h1>
                 <div className="card-deck">
