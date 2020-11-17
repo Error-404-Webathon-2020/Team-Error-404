@@ -35,11 +35,12 @@ We will be adding new upadates in the near future
 - HTML
 - CSS
 - JavaScript
-- React
+- React.js
 - Firebase MongoDB
 - sendgrid
-- Heroku
 - Bootstrap
+- Node.js
+- Express.js
 - fontawesome
 
 > You can try 'MyDoc' at ([https://error404-mydoc.herokuapp.com](https://error404-mydoc.herokuapp.com/))
