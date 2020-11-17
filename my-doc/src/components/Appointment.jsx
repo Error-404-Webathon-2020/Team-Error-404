@@ -24,7 +24,7 @@ function Appointment() {
             setLoading(false);
             console.log(res);
             if(res.data)
-                addToast('Booked successfully', {appearance:'success'})
+                addToast('Booked Successfully', {appearance:'success'})
         }).catch(err => {
             setLoading(false);
             console.log(err);

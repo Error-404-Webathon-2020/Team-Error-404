@@ -402,9 +402,7 @@ const SimpleForm =()=> {
 
       <div style={{position:"fixed" , right:"30px" , bottom:"30px" , zIndex:"50"}}>
       <img  style={{width:"60px" , height:"60px" , borderRadius:"50%" , cursor:"pointer", marginTop:"5px"}} src="https://res.cloudinary.com/simi/image/upload/v1605544492/chatbot_square_zr4og2.jpg" onClick={botShowHide} />
-      </div>
-      
-     
+      </div>     
       </React.Fragment>
     );
   

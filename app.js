@@ -2,11 +2,12 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const sgMail = require('@sendgrid/mail')
+require('dotenv').config(); 
 sgMail.setApiKey("SG."+ process.env.apiKey);
+
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
-require('dotenv').config(); 
 app.use(logger('dev'));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
@@ -32,24 +33,24 @@ app.post('/api/appointment', (req,res) => {
     from: 'care.mydoc@gmail.com',
     to: req.body.email,
     subject: "Appointment scheduled",
-    html: `    <section id="mail" style="font-family: Arial, Helvetica, sans-serif; text-align: left; width: 100%;position: relative;">
+    html: `<section id="mail" style="font-family: Arial, Helvetica, sans-serif; text-align: left; width: 100%;position: relative;">
         <div id="image" style="width: 100%;">
             <img src="https://www.lumahealth.io/wp-content/uploads/2018/05/Transparency-in-the-Doctor-Patient-Relationship-1.jpg" alt="banner image" style="width: 100%;">
         </div>
         <div id="content" style="width: 100%;">
-            <p>Dear Snehasish,</p>
+            <p>Dear ${req.body.name},</p>
             <p>Thank you for booking an appointment with our experts.</p>
             <p>We are pleased to inform you that your Appointment has been confirmed. The details of your appointment are mentioned below.</p>
-            <p id="name">Name :</p>
-            <p id="email">E-mail :</p>
-            <p id="phone">Phone :</p>
-            <p id="gender">Gender :</p>
-            <p id="date">Date :</p>
+            <p id="name">Name : ${req.body.name}</p>
+            <p id="email">E-mail : ${req.body.email}</p>
+            <p id="phone">Phone : ${req.body.phone}</p>
+            <p id="gender">Gender : ${req.body.gender}</p>
+            <p id="date">Date : ${req.body.date}</p>
             <br>
             <p>If you have any queries, You can contact us at +91 8097256743</p>
             <br>
             <p>Regards,<br>MyDoc</p>
-            <a href="" style="text-decoration: none; width: 100%;"><button style="width: 130px; height: 35px; border-radius: 5px; position: absolute; left: 50%; transform: translateX(-50%); background-color: #3A96FF; outline: none; border: none; color: white; font-size: 16px;">Visit MyDoc</button></a>
+            <a href="https://error404-mydoc.herokuapp.com/" style="text-decoration: none; width: 100%;"><button style="width: 130px; height: 35px; border-radius: 5px; position: absolute; left: 50%; transform: translateX(-50%); background-color: #3A96FF; outline: none; border: none; color: white; font-size: 16px;">Visit MyDoc</button></a>
         </div>
         <br>
         <br>

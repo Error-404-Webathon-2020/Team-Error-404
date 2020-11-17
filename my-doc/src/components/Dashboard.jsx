@@ -4,7 +4,7 @@ import '../css/dashboard.css';
 import {Chart} from 'chart.js'
 import {Button,Spinner} from 'react-bootstrap'
 function Dashboard() {
-    let [isLoading, setIsLoading] = useState(false);
+    let [isLoading, setIsLoading] = useState(true);
     const toggleLoading = () =>{
         setIsLoading(!isLoading);
     }
@@ -45,6 +45,7 @@ function Dashboard() {
 
     const getLocation = () => {
       if (navigator.geolocation) {
+        toggleLoading();
         navigator.geolocation.getCurrentPosition(showPosition);
       } else {
           x.innerHTML = "Geolocation is not supported by this browser.";
@@ -70,8 +71,7 @@ function Dashboard() {
         }
         var l = document.getElementById("label2");
         l.innerHTML = `District wise COVID19 Statistics : ${state}`;
-        // var b = document.getElementById("buttons");
-        // b.innerHTML = ``;
+        document.getElementById("lbutton").innerHTML = ``;
         var si = document.getElementById("stateInfo");
         si.innerHTML = `Based on Your Coordinates, Your State is: ${state}`
         trial();
@@ -240,7 +240,8 @@ function Dashboard() {
       }
       console.log(data2);
       var pin6 = document.getElementById("label");
-      pin6.innerHTML = `COVID19 Dashboard of ${state}`
+      pin6.innerHTML = `COVID19 Dashboard of ${state}`;
+      toggleLoading();
       let updatedFormatted = new Date(data2.updated).toLocaleString();
       var d5 = `<p id="title-element">Last Updated On:${updatedFormatted}`;
       pin1.innerHTML = d1 + f1;
@@ -255,7 +256,7 @@ function Dashboard() {
         getJSON();
         chartIt();
         buildTable();
-        // toggleLoading();
+        toggleLoading();
     }, [])
     // useEffect(() => {
     //     toggleLoading();
@@ -263,59 +264,60 @@ function Dashboard() {
 
     // console.log(isLoading, 'loading');
     return (
-    <section id="covid-19-dashboard">
-        <div id="card-container">
-          <div id="confirmed" className="covid-card">Confirmed:</div>
-          <div id="recovered" className="covid-card">Recovered:</div>
-          <div id="active" className="covid-card">Active:</div>
-          <div id="deceased" className="covid-card">Deceased:</div>
-        </div>
+      <div id="body">
+      <section id="covid-19-dashboard">
+      <div id="card-container">
+        <div id="confirmed" className="covid-card">Confirmed:</div>
+        <div id="recovered" className="covid-card">Recovered:</div>
+        <div id="active" className="covid-card">Active:</div>
+        <div id="deceased" className="covid-card">Deceased:</div>
+      </div>
         <p id="label">COVID19 Dashboard of India</p>
         <p id="title-element">Last Updated On:</p>
         <section id="diagrams">
           <div id="PieChart">
-            <canvas id="chartPie" width="100" height="50"></canvas><br />
+            <canvas id="chartPie"></canvas><br />
             <p id="subtitle-piechart">Case Study : India</p>
           </div>
+
           <div id="Graph">
-            <canvas id="chart" width="100" height="50"></canvas>
+            <canvas id="chart"></canvas>
             <p id="subtitle-chart"></p>
           </div>
           <div id="table-container">
             <div id="table">
               <table id="table-heading">
-                  <tbody>
-                        <tr className="bg-info">
-                        <th>District </th>
-                        <th id="confirmed">Confirmed</th>
-                        <th id="recovered">Recovered</th>
-                        <th id="deceased">Deceased</th>
-                        </tr>
+                <tbody>
+                  <tr className="bg-info">
+                    <th>District </th>
+                    <th id="confirmed">Confirmed</th>
+                    <th id="recovered">Recovered</th>
+                    <th id="deceased">Deceased</th>
+                  </tr>
                 </tbody>
               </table>
               <div id="yo" style={{display:"none"}}>
                 <table>
-                  <tbody id="myTable"></tbody>
+                  <tbody id="myTable">
+                  </tbody>
                 </table>
               </div>
             </div>
           </div>
-          <p id="label2"></p>
         </section>
+        <p id="label2"></p>
         <br />
         <p id="stateInfo"></p>
-        {/* <div id="buttons">
-          <button onClick={getLocation} id="covid-bttn">Get Data of your state</button>
-        </div> */}
-        <p id="demo"></p>
-        <div className="text-center">
+        <div id='lbutton' className="text-center">
         { isLoading? 
             <Button variant="primary" disabled> <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/> Loading</Button>:
             <button className='btn btn-primary' onClick={getLocation}>Get data of your state</button>                
-        }
+          }
         </div>
-
+        <p id="demo"></p>
     </section>
+    </div>
+
     )
 }
 

@@ -8,7 +8,7 @@ function ProCard(props) {
                     <img src={props.data.src} className="card-img-top" alt="mask" />
                     <div className="card-body">
                         <h5 className="card-title">{props.data.comp}</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam veritatis </p>
+                        <p className="card-text">Premium quality with special bulk offer</p>
                         <a href={props.data.link} className="btn btn-block btn-primary">Buy Now</a>
                     </div>
                 </a> 

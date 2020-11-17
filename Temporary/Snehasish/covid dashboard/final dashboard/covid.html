@@ -10,6 +10,34 @@
 
     <link rel="stylesheet" href="covid.css">
   </head>
+  <style>
+    #subtitle-piechart {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    #Graph {
+      display: inline-block;
+    }
+
+    #subtitle-chart {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    #label2 {
+      width: 100%;
+    }
+
+    #buttons {
+      width: 100%;
+      text-align: center;
+    }
+
+    #stateInfo {
+      width: 100%;
+    }
+  </style>
 
   <body>
     <section id="covid-19-dashboard">
@@ -19,45 +47,49 @@
         <div id="active" class="covid-card">Active:</div>
         <div id="deceased" class="covid-card">Deceased:</div>
       </div>
-      <p id="label">COVID19 Dashboard of India
+      <p id="label">COVID19 Dashboard of India</p>
       <p id="title-element">Last Updated On:</p>
       <Section id="diagrams">
         <div id="PieChart">
           <canvas id="chartPie" width="100" height="50"></canvas><br />
-          <p id="subtitle-piechart" style="width:100%; font-size: 14px;">Case Study : India</p>
+          <p id="subtitle-piechart">Case Study : India</p>
         </div>
 
-        <div id="Graph" style="display:inline-block;">
+        <div id="Graph">
           <canvas id="chart" width="100" height="50"></canvas>
-          <p id="subtitle-chart" style="width:100%; font-size: 14px;"></p>
+          <p id="subtitle-chart"></p>
         </div>
 
         <div id="table-container">
-          <div id="table" style>
+          <div id="table">
             <table id="table-heading">
-              <tr class="bg-info">
-                <th>District </th>
-                <th id="confirmed">Confirmed</th>
-                <th id="recovered">Recovered</th>
-                <th id="deceased">Deceased</th>
-              </tr>
+              <tbody>
+                <tr class="bg-info">
+                  <th>District </th>
+                  <th id="confirmed">Confirmed</th>
+                  <th id="recovered">Recovered</th>
+                  <th id="deceased">Deceased</th>
+                </tr>
+              </tbody>
             </table>
             <div id="yo" style="display:none;">
               <table>
-                <tbody id="myTable"> </tbody>
-              </table>
+                <tbody id="myTable">
+                </tbody>
             </div>
+            </table>
           </div>
         </div>
-        <p id="label2" style="width:100%;"></p>
-        </div>
+        <p id="label2"></p>
+        <!-- </div> -->
       </Section>
       <br />
-      <p id="stateInfo" style="width:100%;"></p>
-      <div id="buttons" style="width:100%;text-align: center;">
+      <p id="stateInfo"></p>
+      <div id="buttons">
         <button onclick="getLocation()" id="covid-bttn">Get Data of your state</button>
       </div>
       <p id="demo"></p>
+      </div>
     </section>
     <script>
       var refresh = true;
@@ -68,7 +100,7 @@
         "Andhra Pradesh": "AP",
         "Arunanchal Pradesh": "AR",
         "Assam": "AS",
-        "Bihar": "BR",
+        "Bihar": "br/",
         "Chattisgarh": "CT",
         "Goa": "GA",
         "Gujrat": "GJ",
@@ -102,7 +134,7 @@
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-          x.innerHTML = "Geolocation is not supported by this browser.";
+          x.innerHTML = "Geolocation is not supported by this br/owser.";
         }
       }
 
@@ -279,22 +311,22 @@
         var pin3 = document.getElementById('confirmed');
         var pin4 = document.getElementById('deceased');
         var pin5 = document.getElementById('title-element');
-        var d1 = `  Active:<br>${data[STATE].total.confirmed - data[STATE].total.recovered - data[STATE].total.deceased}`
-        var d2 = `  Recovered:<br>${data[STATE].total.recovered}`
-        var d3 = `  Confirmed:<br>${data[STATE].total.confirmed}`
-        var d4 = `  Deceased:<br>${data[STATE].total.deceased}`
+        var d1 = `  Active:<br/>${data[STATE].total.confirmed - data[STATE].total.recovered - data[STATE].total.deceased}`
+        var d2 = `  Recovered:<br/>${data[STATE].total.recovered}`
+        var d3 = `  Confirmed:<br/>${data[STATE].total.confirmed}`
+        var d4 = `  Deceased:<br/>${data[STATE].total.deceased}`
         var f1, f2, f3, f4;
         if (STATE == 'TT') {
-          f1 = `<br><p>[${data2.todayCases - data2.todayRecovered - data2.todayDeaths}]</p>`;
-          f2 = `<br><p>[+${data2.todayRecovered}]</p>`;
-          f3 = `<br><p>[+${data2.todayCases}]</p>`;
-          f4 = `<br><p>[+${data2.todayDeaths}]</p>`;
+          f1 = `<br/><p>[${data2.todayCases - data2.todayRecovered - data2.todayDeaths}]</p>`;
+          f2 = `<br/><p>[+${data2.todayRecovered}]</p>`;
+          f3 = `<br/><p>[+${data2.todayCases}]</p>`;
+          f4 = `<br/><p>[+${data2.todayDeaths}]</p>`;
         }
         else {
-          f1 = `<br><p>N/A</p>`;
-          f2 = `<br><p>N/A</p> `;
-          f3 = `<br><p>N/A</p> `;
-          f4 = `<br><p>N/A</p> `;
+          f1 = `<br/><p>N/A</p>`;
+          f2 = `<br/><p>N/A</p> `;
+          f3 = `<br/><p>N/A</p> `;
+          f4 = `<br/><p>N/A</p> `;
         }
         console.log(data2);
         var pin6 = document.getElementById("label");

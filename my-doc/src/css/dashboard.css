@@ -1,4 +1,4 @@
-body {
+#body {
   width: 100%;
   height: 100%;
 }
@@ -55,12 +55,12 @@ body {
   outline: none;
 }
 #diagrams {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 #table-container {
-  width: 45%;
+  width: 50%;
   display: none;
 }
 #table {
@@ -125,13 +125,15 @@ body {
   margin: 0 auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 14px;
 }
 #PieChart {
   width: 45%;
-  /* display:inline-block; */
+  display: inline-block;
 }
 #Graph {
   width: 45%;
+  display: inline-block;
 }
 table {
   width: 100%;
@@ -146,13 +148,11 @@ table {
 } */
 
 table th {
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
   padding: 12px;
-  /* text-align: left; */
   background-color: black;
   color: white;
   border-radius: 15px;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: 900;
 }
@@ -202,6 +202,7 @@ tr:hover {
   }
   #Graph {
     width: 98%;
+    display: inline-block;
   }
   #yo {
     width: 100%;
@@ -211,6 +212,8 @@ tr:hover {
   }
   #buttons {
     font-size: 20px;
+    width: 100%;
+    text-align: center;
   }
   #table {
     width: 100%;

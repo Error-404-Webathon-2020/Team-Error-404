@@ -3,22 +3,20 @@ import Home from './components/Home'
 import Appointment from './components/Appointment'
 import Contact from './components/Contact'
 import {Masks,Gloves, Sanitizers} from './components/Products'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import './css/home.css'
 import {ToastProvider} from 'react-toast-notifications'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars} from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   return (
     <>
       <Navbar className="fixed-top" expand='lg'>
         <div className="container">
-          <a className="navbar-brand" href="index.html">MyDoc </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i className="fa fa-bars"></i>
-          </button>
-          <Navbar.Toggle aria-controls='navbarSupportedContent' />
+          <a className="navbar-brand" href="/">MyDoc </a>
+          <Navbar.Toggle aria-controls='navbarSupportedContent'><FontAwesomeIcon icon={faBars} className='nav-toggler'/></Navbar.Toggle>
           <Navbar.Collapse id="navbarSupportedContent">
             <Nav className="ml-auto">
               <li className="nav-item">
@@ -31,7 +29,7 @@ function App() {
                 <a className="nav-link" href="/diagnose">Diagnose</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#products">E-commerce</a>
+                <a className="nav-link" href="/#products">E-commerce</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/contact-us">Contact</a>
@@ -56,15 +54,14 @@ function App() {
         <section id="main">
           <div id="footer-coloumn1" className="col-lg-4 col-sm-12 coloumn">
             <h5>About Us</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nihil delectus, doloribus fugiat adipisci maxime placeat minus illo incidunt molestiae!</p>
+            <p>Welcome to DocPort. We, here at DocPort, try everything in our power to provide you with anything that can be provided through an internet portal. From risk assessment to to help expert advice and country state and district specific data about covid-19 to buying covid-19 preventive utilities, this is your one stop pitstop for all covid-19 related utilities and services.</p>
           </div>
           <div id="footer-coloumn2" className="col-lg-4 col-sm-12 coloumn">
             <h5>Quick Links</h5>
             <ul>
-              <li><a href="appointment.html">Appointment</a></li>
-              <li><a href="#">Diagnose</a></li>
-              <li><a href="#">Covid Dashboard</a></li>
-              <li><a href="#">Health Care Essentials</a></li>
+              <li><a href="/appointment">Appointment</a></li>
+              <li><a href="/#body">Covid Dashboard</a></li>
+              <li><a href="/#products">Health Care Essentials</a></li>
             </ul>
           </div>
           <div id="footer-coloumn3" className="col-lg-4 col-sm-12 coloumn">
