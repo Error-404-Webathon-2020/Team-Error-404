@@ -30,4 +30,16 @@ We will be adding new upadates in the near future
 - More powerful chat bot which will diagnose more no of diseases
 - Payment gateway and E-commerce service
 
+## Tools used for development
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Firebase MongoDB
+- sendgrid
+- Heroku
+- Bootstrap
+- fontawesome
+
 > You can try 'MyDoc' at ([https://error404-mydoc.herokuapp.com](https://error404-mydoc.herokuapp.com/))
