@@ -51,7 +51,7 @@ function App() {
         <section id="main">
           <div id="footer-coloumn1" className="col-lg-4 col-sm-12 coloumn">
             <h5>About Us</h5>
-            <p>Welcome to DocPort. We, here at DocPort, try everything in our power to provide you with anything that can be provided through an internet portal. From risk assessment to to help expert advice and country state and district specific data about covid-19 to buying covid-19 preventive utilities, this is your one stop pitstop for all covid-19 related utilities and services.</p>
+            <p>Welcome to MyDoc. We, here at MyDoc, try everything in our power to provide you with anything that can be provided through an internet portal. From risk assessment to to help expert advice and country state and district specific data about covid-19 to buying covid-19 preventive utilities, this is your one stop pitstop for all covid-19 related utilities and services.</p>
           </div>
           <div id="footer-coloumn2" className="col-lg-4 col-sm-12 coloumn">
             <h5>Quick Links</h5>
