@@ -181,10 +181,11 @@ const SimpleForm =()=> {
       { show == true && <div className="chatPage">
       <ThemeProvider theme={theme} >    
       <ChatBot
-      
+      inputStyle={{borderBottom:'none'}}
+      submitButtonStyle={{paddingTop:"0px"}}
       userAvatar="https://res.cloudinary.com/simi/image/upload/v1605544521/person_n2iwss.jpg"
       botAvatar="https://res.cloudinary.com/simi/image/upload/v1605544479/bot_hepzt6.jpg"
-      headerTitle="Diagnose"
+      headerTitle="Diagnose Covid-19"
       
       speechSynthesis={{ enable: true, lang: 'en' }}
         steps={[
@@ -394,13 +395,11 @@ const SimpleForm =()=> {
         ]}
       />
       </ThemeProvider>
-       <div style={{ height:"30px", width:"30px",borderRadius:"50%" , boxShadow:"0 0 15px  #ccc", textAlign:"center", cursor:"pointer"}} onClick={botHide}>
-      X
-      </div>
+       
       </div> }
       
 
-      <div style={{position:"fixed" , right:"30px" , bottom:"30px" , zIndex:"50"}}>
+      <div style={{position:"fixed" , right:"30px" , bottom:"15px" , zIndex:"50"}}>
       <img  style={{width:"60px" , height:"60px" , borderRadius:"50%" , cursor:"pointer", marginTop:"5px"}} src="https://res.cloudinary.com/simi/image/upload/v1605544492/chatbot_square_zr4og2.jpg" onClick={botShowHide} />
       </div>     
       </React.Fragment>
