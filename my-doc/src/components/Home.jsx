@@ -6,11 +6,13 @@ import gloves from "../img/gloves.jpg"
 import slide1 from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg'
 import slide3 from '../img/slide3.jpg'
+import ChartPage from "./chatpage"
+
 
 import { Carousel } from 'react-bootstrap'
 function Home() {
     return (
-        <>
+        <> <ChartPage/>
             <Carousel>
                 <Carousel.Item>
                     <img src={slide1} className="d-block w-100" id="img1" alt="Notes" />
