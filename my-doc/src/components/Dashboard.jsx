@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import '../css/dashboard.css';
-import {Chart} from './Chart.js'
+import {Chart} from 'chart.js'
 import {Button,Spinner} from 'react-bootstrap'
 function Dashboard() {
     let [isLoading, setIsLoading] = useState(false);

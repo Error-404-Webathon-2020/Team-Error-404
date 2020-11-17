@@ -32,9 +32,30 @@ app.post('/api/appointment', (req,res) => {
     from: 'care.mydoc@gmail.com',
     to: req.body.email,
     subject: "Appointment scheduled",
-    html: `<h1>Appointment scheduled</h1>
-    <p style="color:blue">${req.body.name}</p>
-    <p style="color:yellow">${req.body.date}</p>`,
+    html: `    <section id="mail" style="font-family: Arial, Helvetica, sans-serif; text-align: left; width: 100%;position: relative;">
+        <div id="image" style="width: 100%;">
+            <img src="https://www.lumahealth.io/wp-content/uploads/2018/05/Transparency-in-the-Doctor-Patient-Relationship-1.jpg" alt="banner image" style="width: 100%;">
+        </div>
+        <div id="content" style="width: 100%;">
+            <p>Dear Snehasish,</p>
+            <p>Thank you for booking an appointment with our experts.</p>
+            <p>We are pleased to inform you that your Appointment has been confirmed. The details of your appointment are mentioned below.</p>
+            <p id="name">Name :</p>
+            <p id="email">E-mail :</p>
+            <p id="phone">Phone :</p>
+            <p id="gender">Gender :</p>
+            <p id="date">Date :</p>
+            <br>
+            <p>If you have any queries, You can contact us at +91 8097256743</p>
+            <br>
+            <p>Regards,<br>MyDoc</p>
+            <a href="" style="text-decoration: none; width: 100%;"><button style="width: 130px; height: 35px; border-radius: 5px; position: absolute; left: 50%; transform: translateX(-50%); background-color: #3A96FF; outline: none; border: none; color: white; font-size: 16px;">Visit MyDoc</button></a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>    `,
     };
     let newApp = new Appointment({
       name : req.body.name,
