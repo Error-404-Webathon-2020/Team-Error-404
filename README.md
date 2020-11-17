@@ -36,7 +36,7 @@ We will be adding new upadates in the near future
 - CSS
 - JavaScript
 - React.js
-- Firebase MongoDB
+- MongoDB
 - sendgrid
 - Bootstrap
 - Node.js
