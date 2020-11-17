@@ -26,9 +26,6 @@ function App() {
                 <a className="nav-link" href="/appointment">Appointment</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/diagnose">Diagnose</a>
-              </li>
-              <li className="nav-item">
                 <a className="nav-link" href="/#products">E-commerce</a>
               </li>
               <li className="nav-item">

@@ -5,6 +5,7 @@ import BG from '../img/bg.jpg'
 import axios from 'axios'
 import {useToasts} from 'react-toast-notifications'
 import {Spinner, Button} from 'react-bootstrap'
+import ChartPage from "./chatpage"
 
 
 function Appointment() {
@@ -32,7 +33,9 @@ function Appointment() {
             addToast('An error occured, try again!', {appearance:'error'})
         });
     }
-    return (
+    return (<>
+            <ChartPage/>
+
         <section id="appointment">
             <img src={BG} alt="doc" id="bg-img" />
             <form action="#" method="post" className="my-auto" onChange={handleChange} onSubmit={handleSubmit}>
@@ -87,6 +90,7 @@ function Appointment() {
                 {/* </div> */}
             </form>
         </section>
+        </>
     )
 }
 
