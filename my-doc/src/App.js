@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import Appointment from './components/Appointment'
 import Contact from './components/Contact'
+import {Masks,Gloves, Sanitizers} from './components/Products'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import './css/home.css'
@@ -29,7 +31,7 @@ function App() {
                 <a className="nav-link" href="/diagnose">Diagnose</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/ecommerce">E-commerce</a>
+                <a className="nav-link" href="#products">E-commerce</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/contact-us">Contact</a>
@@ -44,6 +46,9 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route exact path='/appointment' component={Appointment} />
             <Route exact path='/contact-us' component={Contact} />
+            <Route exact path='/products/masks' component={Masks} /> 
+            <Route exact path='/products/gloves' component={Gloves} />            
+            <Route exact path='/products/sanitizers' component={Sanitizers} />                       
           </Switch>
         </Router>
       </ToastProvider>

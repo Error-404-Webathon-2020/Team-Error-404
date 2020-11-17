@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../css/home.css'
 import sanitizer from '../img/sanitizer.jpg'
 import mask from '../img/mask.jpg'
@@ -13,7 +13,8 @@ import Dashboard from './Dashboard';
 import { Carousel } from 'react-bootstrap'
 function Home() {
     return (
-        <> <ChartPage/>
+        <> 
+        <ChartPage/>
             <Carousel>
                 <Carousel.Item>
                     <img src={slide1} className="d-block w-100" id="img1" alt="Notes" />
@@ -28,7 +29,7 @@ function Home() {
                     <Carousel.Caption>
                         <h5 className="animate__animated animate__fadeInDown">Diagnose Your Disease </h5>
                         <p className="animate__animated animate__fadeIn">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, molestiae maxime! Optio consequuntur sequi praesentium?</p>
-                        <p className="animate__animated animate__fadeInUp"><a href="/diagnose">Diagnose Now</a></p>
+                        <p className="animate__animated animate__fadeInUp"><a href='#'>Diagnose Now</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -37,7 +38,7 @@ function Home() {
                     <Carousel.Caption>
                         <h5 className="animate__animated animate__fadeInDown">Health Care Essentials</h5>
                         <p className="animate__animated animate__fadeIn">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, molestiae maxime! Optio consequuntur sequi praesentium?</p>
-                        <p className="animate__animated animate__fadeInUp"><a href="/ecommerce">Buy Now</a></p>
+                        <p className="animate__animated animate__fadeInUp"><a href="#products">Buy Now</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
@@ -46,7 +47,7 @@ function Home() {
                 <h1 className="section-heading">Health Care Essentials</h1>
                 <div className="card-deck">
                     <div className="card">
-                        <a href="#" className="card-link">
+                        <a href="/products/sanitizers" className="card-link">
                             <img src={sanitizer} className="card-img-top" alt="sanitizer" />
                             <div className="card-body">
                                 <h5 className="card-title">Hand Sanitizers</h5>
@@ -55,7 +56,7 @@ function Home() {
                         </a>
                     </div>
                     <div className="card">
-                        <a href="#" className="card-link">
+                        <a href="/products/masks" className="card-link">
                             <img src={mask} className="card-img-top" alt="Face mask" />
                             <div className="card-body">
                                 <h5 className="card-title">Face masks</h5>
@@ -64,7 +65,7 @@ function Home() {
                         </a>
                     </div>
                     <div className="card">
-                        <a href="#" className="card-link">
+                        <a href="/products/gloves" className="card-link">
                             <img src={gloves} className="card-img-top" alt="gloves" />
                             <div className="card-body">
                                 <h5 className="card-title">Hand Gloves</h5>

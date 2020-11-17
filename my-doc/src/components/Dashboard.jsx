@@ -70,8 +70,8 @@ function Dashboard() {
         }
         var l = document.getElementById("label2");
         l.innerHTML = `District wise COVID19 Statistics : ${state}`;
-        var b = document.getElementById("buttons");
-        b.innerHTML = ``;
+        // var b = document.getElementById("buttons");
+        // b.innerHTML = ``;
         var si = document.getElementById("stateInfo");
         si.innerHTML = `Based on Your Coordinates, Your State is: ${state}`
         trial();
@@ -304,9 +304,9 @@ function Dashboard() {
         </section>
         <br />
         <p id="stateInfo"></p>
-        <div id="buttons">
-          {/* <button onClick={getLocation} id="covid-bttn">Get Data of your state</button> */}
-        </div>
+        {/* <div id="buttons">
+          <button onClick={getLocation} id="covid-bttn">Get Data of your state</button>
+        </div> */}
         <p id="demo"></p>
         <div className="text-center">
         { isLoading? 
