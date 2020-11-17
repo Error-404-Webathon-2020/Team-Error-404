@@ -1,0 +1,298 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html
+{
+    height: 100%;
+    width: 100%;
+}
+body
+{
+    width: 100%;
+    height: 100%;
+}
+nav
+{
+    background-color: #3A96FF;
+    box-shadow: 0px 0px 10px 1px #888;
+    width: 100vw !important;
+}
+.navbar-brand
+{
+    color: white !important;
+    font-weight: 700;
+    font-size: 25px;
+}
+.navbar-toggler
+{
+    outline: none !important;
+    border: none;
+}
+.navbar-toggler i
+{
+    font-size: 32px;
+    color: #fff;
+}
+.nav-link
+{
+    font-size: 18px;
+    font-weight: 500;
+    color: #acd9ff !important;
+}
+.nav-link:hover, .active>a
+{
+    color: white !important;
+    font-weight: 600 ;
+
+}
+#appointment
+{
+    width: 100%;
+    height: 100%;
+    background: url("images/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#appointment form
+{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(250, 249, 249,0.7);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px 25px;
+}
+#info
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#info h1
+{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #3A96FF;
+    text-align: center;
+    font-weight: bold;
+}
+#info h5
+{
+    font-size: 16px;
+    color: rgb(90, 89, 89);
+    text-align: center;
+    font-weight: 500;
+}
+.input
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+input
+{
+    border: none;
+    width: 70%;
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+}
+.input div
+{
+    width: 70%;
+    display: inline-block;
+
+}
+.radio
+{
+   width: 40%;
+}
+.radio span
+{
+    margin-left: 2px;
+}
+input[type=radio]
+{
+    width: 13px;
+    height: 15px;
+}
+.label-for-input 
+{
+    width: 100%;
+}
+.label-for-input>span
+{
+    display: inline-block;
+    width: 20%;
+    font-size: 20px;
+    font-weight: 500;
+}
+#submit
+{
+    width: 100%;
+}
+input[type=submit]
+{
+    height: 40px;
+    position: absolute;
+    background-color: #3A96FF;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    font-size: 18px;
+    padding-left: 0px;
+    border-radius: 5px;
+}
+input:focus
+{
+    border-bottom: 3px solid #3A96FF;
+}
+footer
+	{
+		width:100%;
+		background-color:#292828;
+		height:auto;
+		color:white;
+	}
+	footer #main
+	{
+		width:100%;
+		display:flex;
+		justify-content:space-evenly;
+		flex-wrap:wrap;
+		padding:10px 0 10px 50px;
+    }
+	footer #main .coloumn ul
+	{
+		list-style:none;
+		display:inline-block;
+		
+	}
+	footer #main .coloumn ul li
+	{
+		list-style:none;
+		
+	}
+	footer #main .coloumn ul li a
+	{
+		text-decoration:none;
+		font-size:16px;
+		color:#fff;
+		
+    }
+    #footer-coloumn2
+    {
+        padding-left: 50px;
+    }
+    footer #main .coloumn ul li a:hover
+    {
+        color: #3A96FF;
+    }
+	footer #main .coloumn h5
+	{
+		color:l#fff;
+		font-size:20px;
+        margin-bottom:20px;
+        color: #3A96FF;
+	}
+	footer #copyright
+	{
+		width:100%;
+		height:50px;
+		background-color:#181818;
+		text-align:center;
+		padding-top:15px;
+    }
+    footer p
+    {
+        margin-bottom: 0;
+    }
+@media (max-width:990px)
+    {
+        .coloumn
+        {
+        margin-bottom: 20px;
+        }   
+        #footer-coloumn2
+        {
+        padding-left: 15px;
+        }
+        footer #main
+        {
+        padding:10px 0 10px 10px;
+        }
+    }
+@media (max-width:768px)
+{
+    #info h1
+    {
+        font-size: 28px;
+    }
+    #info h5
+    {
+    font-size: 18px;
+    }
+    #appointment form
+    {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(250, 249, 249,0.65);
+        position: static;
+        transform: translate(0%,0%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    input
+    {
+    width: 75%;
+    height: 30px;
+    padding-left: 10px;
+    }
+    input[type=radio] 
+    {
+        padding-left: 0;
+    }
+    input[type=submit]
+    {
+        width: 50%;
+    }
+    .label-for-input span
+    {
+    font-size: 18px;
+    }
+
+}
+@media (max-width:500px)
+{
+    #info h1
+    {
+        font-size: 23px;
+    }
+    #info h5
+    {
+    font-size: 16px;
+    }
+    #appointment form
+    {
+        padding: 15px;
+    }
+    .label-for-input>span
+    {
+    width: 22%;
+    font-size: 16px;
+    }
+    input[type=submit]
+    {
+        font-size: 16px;
+    }
+   
+
+}
